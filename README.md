@@ -1,0 +1,1 @@
+Template source : https://github.com/aspnet/AspNetCore/tree/master/src/ProjectTemplates/Web.ProjectTemplates/content/Worker-CSharp  
