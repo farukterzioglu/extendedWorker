@@ -1,18 +1,18 @@
 {
   "$schema": "http://json.schemastore.org/template",
-  "author": "Microsoft",
+  "author": "Faruk Terzioglu",
   "classifications": [
     "Common",
     "Worker",
     "Web"
   ],
-  "name": "Worker Service",
+  "name": "Worker Service (Extended)",
   "generatorVersions": "[1.0.0.0-*)",
-  "description": "An empty project template for creating a worker service.",
-  "groupIdentity": "Microsoft.Worker.Empty",
+  "description": "Pretty much full project template for creating a worker service.",
+  "groupIdentity": "Microsoft.Worker.Extended",
   "precedence": "6000",
-  "identity": "Microsoft.Worker.Empty.CSharp.3.1",
-  "shortName": "worker",
+  "identity": "Microsoft.Worker.Extended.CSharp.3.1",
+  "shortName": "workerextended",
   "tags": {
     "language": "C#",
     "type": "project"
