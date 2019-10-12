@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0.0",
+  "strings": {
+    "name": "Worker Service Class (Extended)",
+    "description": "A detailed background service class for worker projects."
+  }
+}
