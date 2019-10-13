@@ -19,13 +19,33 @@ namespace Worker.App
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _logger.LogDebug("Worker1 started...");
-            
+             _logger.LogInformation($"{nameof(Worker1)} started.");
+
+            try
+            {
+                await DoWork(stoppingToken);
+            }
+            catch (TaskCanceledException) { }
+            catch (System.Exception ex)
+            {
+                _logger.LogCritical(ex.ToString());
+                await this.StopAsync(stoppingToken);
+            }
+        }
+
+        private async Task DoWork(CancellationToken stoppingToken)
+        {
             while (!stoppingToken.IsCancellationRequested)
             {
-                _logger.LogInformation("Worker1 running at: {time}", DateTimeOffset.Now);
-                await Task.Delay(1000, stoppingToken);
+                _logger.LogInformation("Worker1 is running at: {time}", DateTimeOffset.Now);
+                await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
             }
+        }
+
+        public override async Task StopAsync(CancellationToken cancellationToken)
+		{
+            _logger.LogInformation($"{nameof(Worker)} stopped.");
+            await base.StopAsync(cancellationToken);
         }
     }
 }

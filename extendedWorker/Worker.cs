@@ -11,21 +11,43 @@ namespace Company.Application1
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
+        private readonly Settings _settings;
 
-        public Worker(ILogger<Worker> logger)
+        public Worker(ILogger<Worker> logger, Settings settings)
         {
             _logger = logger;
+            _settings = settings;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _logger.LogDebug("Worker started...");
-            
+             _logger.LogInformation($"{nameof(Worker)} started.");
+
+            try
+            {
+                await DoWork(stoppingToken);
+            }
+            catch (TaskCanceledException) { }
+            catch (System.Exception ex)
+            {
+                _logger.LogCritical(ex.ToString());
+                await this.StopAsync(stoppingToken);
+            }
+        }
+
+        private async Task DoWork(CancellationToken stoppingToken)
+        {
             while (!stoppingToken.IsCancellationRequested)
             {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                await Task.Delay(1000, stoppingToken);
+                _logger.LogInformation("Worker is running at: {time}", DateTimeOffset.Now);
+                await Task.Delay(TimeSpan.FromSeconds(_settings.WorkerIntervalSec), stoppingToken);
             }
+        }
+
+        public override async Task StopAsync(CancellationToken cancellationToken)
+		{
+            _logger.LogInformation($"{nameof(Worker)} stopped.");
+            await base.StopAsync(cancellationToken);
         }
     }
 }
