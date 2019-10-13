@@ -5,7 +5,7 @@ Worker Service (Extended) Class
 
 Install "Worker Service (Extended)" from source code
 ```
-dotnet new -i ./extendedWorker
+dotnet new -i ./Company.Application1
 ```
 
 Install "Worker Service (Extended) Class" from source code
