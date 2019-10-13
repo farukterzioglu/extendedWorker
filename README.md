@@ -35,6 +35,13 @@ dotnet run
 // Hit 'CTRL+C' to exit
 ```
 
+Create Nuget Package  
+```
+dotnet pack
+// To install from .nupkg file
+dotnet new -i bin/Debug/Worker.Extended.1.0.0.nupkg
+```
+
 References:  
 https://github.com/aspnet/AspNetCore/tree/master/src/ProjectTemplates/Web.ProjectTemplates/content/Worker-CSharp  
 https://github.com/dotnet/templating/wiki/%22Runnable-Project%22-Templates  

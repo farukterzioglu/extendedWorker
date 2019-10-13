@@ -2,11 +2,17 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <PackageId>Worker.Extended</PackageId>
     <Title>Worker Service (Extended)</Title>
     <Authors>Faruk Terzioğlu</Authors>
     <Description>Pretty much full project template for creating a worker service.</Description>
+    <RepositoryUrl>https://github.com/farukterzioglu/extendedWorker</RepositoryUrl>      
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/farukterzioglu/extendedWorker</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/farukterzioglu/extendedWorker/raw/master/Company.Application1/.template.config/vs-2017.3/Worker.png</PackageIconUrl>
+
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>dotnet-new;templates;worker;backgroundservice</PackageTags>
 
     <TargetFramework>netcoreapp3.0</TargetFramework>
