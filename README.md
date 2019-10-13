@@ -2,21 +2,11 @@ Creates a Worker Project (.Net Core 3.0) with additional features.
 Some required changes after creating a new worker project are pre-created with this project template.  
 Configured for logging with Serilog.  
 
-Includes:  
+### Included Project Types
 Worker Service (Extended)  
 Worker Service (Extended) Class  
 
-Install "Worker Service (Extended)" from source code
-```
-dotnet new -i ./Company.Application1
-```
-
-Install "Worker Service (Extended) Class" from source code
-```
-dotnet new -i ./extendedWorkerClass
-```
-
-Usage  
+### Usage  
 ```
 dotnet new workerextended -n NewWorkerApp
 cd NewWorkerApp/
@@ -34,6 +24,17 @@ dotnet new workerextended-service -n Worker2
 
 dotnet run
 // Hit 'CTRL+C' to exit
+```
+
+### Build
+Install "Worker Service (Extended)" from source code
+```
+dotnet new -i ./Company.Application1
+```
+
+Install "Worker Service (Extended) Class" from source code
+```
+dotnet new -i ./extendedWorkerClass
 ```
 
 Create Nuget Package  
